@@ -1,7 +1,7 @@
 
 
 const UserDetail = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;
 
   const data = await fetch(`https://dummyjson.com/users/${id}`);
   const user = await data.json(); 
