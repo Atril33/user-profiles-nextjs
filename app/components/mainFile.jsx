@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import FilterBar from "./filterBar";
 import AllUsers from "./allUsers";
+import Link from "next/link";
 
 const MainFile = () => {
   const [inputValue, setInputValue] = useState('');
@@ -33,13 +34,13 @@ const MainFile = () => {
       <FilterBar value={inputValue} change={handleInputChange} />
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {filteredUsers.map((user) => (
-          <a href={`/user/${user.id}`} key={user.id} className="no-underline text-black border border-black ">
+          <Link href={`/user/${user.id}`} key={user.id} className="no-underline text-black border border-black ">
           <div key={user.id} className="border p-4 rounded shadow-lg flex flex-col items-center">
             <h3>{user.firstName} {user.lastName}</h3>
             <p>{user.gender}</p>
             <p>{user.email}</p>
           </div>
-          </a>
+          </Link>
         ))}
         </div>
     </div>

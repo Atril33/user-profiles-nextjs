@@ -1,11 +1,13 @@
 import './globals.css';
 
+export const metadata = {
+  title: 'User Profiles',
+  description: 'A simple user profiles app',
+}
+
 const RootLayout = ({ children }) => {
   return (
     <html>
-      <head>
-        <title>User Profile</title>
-        </head>
       <body>
       { children }
       </body>
